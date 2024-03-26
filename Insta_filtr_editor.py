@@ -15,3 +15,17 @@ for x in range(sirka):
         obrazek.putpixel((x,y), (R, G, B))
 
 obrazek.show()
+
+#2
+obrazek = Image.open("blesk.jpg")
+sirka, vyska = obrazek.size
+x = 0
+while x < sirka:
+    y = 0
+    while y < vyska:
+        r, g, b = obrazek.getpixel((x,y))
+        if r+g+b > 500:  
+            obrazek.putpixel((x,y), (255-r, 255-g, 255-b))
+        y += 1
+    x += 1
+obrazek.show()
